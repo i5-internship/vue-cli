@@ -3,7 +3,9 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Contact from './views/Contact.vue'
-import User from './views/User.vue'
+import Users from './views/Users.vue'
+import UserShow from './views/UserShow.vue'
+import Vue404 from './views/errors/404.vue'
 
 Vue.use(Router)
 
@@ -25,9 +27,19 @@ export default new Router({
       component: Contact
     } ,
     {
-      path: '/user',
-      name: 'user',
-      component: User
+      path: '/users',
+      name: 'users',
+      component: Users
+    },
+    {
+      path: '/user/show/:id',
+      name: 'user-show',
+      component: UserShow
+    },
+    {
+      path: '*',
+      name: '404',
+      component: Vue404
     }
   ]
 })
